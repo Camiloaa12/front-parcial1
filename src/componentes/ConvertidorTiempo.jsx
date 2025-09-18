@@ -42,7 +42,7 @@ const ConvertidorTiempo = () => {
       const datos = await respuesta.json()
       
       if (respuesta.ok) {
-        setResultado(datos)
+        setResultado(`${valor} ${unidadOrigen} = ${resultado.toFixed(0)} ${unidadDestino}`);
       } else {
         setError(datos.error || 'Error en la conversión')
       }
