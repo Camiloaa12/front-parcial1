@@ -27,7 +27,6 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="logo-container">
-          <img src="/logo.svg" alt="Logo Convertidor" className="logo" />
           <div className="header-text">
             <h1>Convertidor</h1>
           </div>
