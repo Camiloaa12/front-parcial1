@@ -56,7 +56,6 @@ const ConvertidorMoneda = () => {
   return (
     <div className="convertidor">
       <h2>💰 Convertidor de Moneda</h2>
-      <p className="nota">*Tasas de cambio fijas para demostración</p>
       
       <div className="formulario">
         <div className="campo">
@@ -64,8 +63,14 @@ const ConvertidorMoneda = () => {
           <input
             type="number"
             value={valor}
-            onChange={(e) => setValor(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (value === '' || /^\d*\.?\d*$/.test(value)) {
+                setValor(value);
+              }
+            }}
             placeholder="Ingresa el valor"
+            inputMode="decimal"
           />
         </div>
 

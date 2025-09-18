@@ -63,8 +63,14 @@ const ConvertidorTiempo = () => {
           <input
             type="number"
             value={valor}
-            onChange={(e) => setValor(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (value === '' || /^\d*\.?\d*$/.test(value)) {
+                setValor(value);
+              }
+            }}
             placeholder="Ingresa el valor"
+            inputMode="decimal"
           />
         </div>
 

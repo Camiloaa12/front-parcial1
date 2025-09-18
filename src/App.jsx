@@ -25,41 +25,47 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>🔄 Convertidor Universal de Medidas</h1>
-        <p>Convierte fácilmente entre diferentes unidades</p>
+      <header className="header">
+        <div className="logo-container">
+          <img src="/logo.svg" alt="Logo Convertidor" className="logo" />
+          <div className="header-text">
+            <h1>Convertidor</h1>
+          </div>
+        </div>
       </header>
       
-      <nav className="navegacion">
-        <button 
-          className={tipoConvertidor === 'tiempo' ? 'activo' : ''}
-          onClick={() => setTipoConvertidor('tiempo')}
-        >
-          ⏰ Tiempo
-        </button>
-        <button 
-          className={tipoConvertidor === 'peso' ? 'activo' : ''}
-          onClick={() => setTipoConvertidor('peso')}
-        >
-          ⚖️ Peso
-        </button>
-        <button 
-          className={tipoConvertidor === 'temperatura' ? 'activo' : ''}
-          onClick={() => setTipoConvertidor('temperatura')}
-        >
-          🌡️ Temperatura
-        </button>
-        <button 
-          className={tipoConvertidor === 'moneda' ? 'activo' : ''}
-          onClick={() => setTipoConvertidor('moneda')}
-        >
-          💰 Moneda
-        </button>
-      </nav>
+      <div className="main-container">
+        <nav className="navegacion">
+          <button 
+            className={`boton-nav ${tipoConvertidor === 'tiempo' ? 'activo' : ''}`}
+            onClick={() => setTipoConvertidor('tiempo')}
+          >
+             Tiempo
+          </button>
+          <button 
+            className={`boton-nav ${tipoConvertidor === 'peso' ? 'activo' : ''}`}
+            onClick={() => setTipoConvertidor('peso')}
+          >
+             Peso
+          </button>
+          <button 
+            className={`boton-nav ${tipoConvertidor === 'temperatura' ? 'activo' : ''}`}
+            onClick={() => setTipoConvertidor('temperatura')}
+          >
+             Temperatura
+          </button>
+          <button 
+            className={`boton-nav ${tipoConvertidor === 'moneda' ? 'activo' : ''}`}
+            onClick={() => setTipoConvertidor('moneda')}
+          >
+             Moneda
+          </button>
+        </nav>
 
-      <main className="contenido-principal">
-        {renderizarConvertidor()}
-      </main>
+        <main className="contenido">
+          {renderizarConvertidor()}
+        </main>
+      </div>
     </div>
   )
 }
