@@ -116,7 +116,7 @@ const ConvertidorTiempo = () => {
           <h3>Resultado:</h3>
           <p>
             <strong>{resultado.valorOriginal}</strong> {resultado.unidadOrigen} = 
-            <strong> {resultado.valorConvertido.toFixed(4)}</strong> {resultado.unidadDestino}
+            <strong> {resultado.valorConvertido.toFixed(2)}</strong> {resultado.unidadDestino}
           </p>
         </div>
       )}
