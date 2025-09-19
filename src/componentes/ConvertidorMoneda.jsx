@@ -42,7 +42,7 @@ const ConvertidorMoneda = () => {
       const datos = await respuesta.json()
       
       if (respuesta.ok) {
-        setResultado(`${valor} ${unidadOrigen} = ${resultado.toFixed(0)} ${unidadDestino}`);
+        setResultado(datos)
       } else {
         setError(datos.error || 'Error en la conversión')
       }
